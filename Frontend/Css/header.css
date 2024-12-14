@@ -1,0 +1,71 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Header Styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #4CAF50;
+  color: white;
+}
+
+header .logo h1 {
+  font-size: 30px;
+}
+
+header .search-bar input {
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+  border-radius: 5px;
+  border: none;
+}
+
+header .logout button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #FF6347;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+header .logout button:hover {
+  background-color: #FF4500;
+}
+
+/* Navigation Menu Styling */
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+}
+
+.nav-menu ul li {
+  margin-right: 60px;
+}
+
+.nav-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-menu ul li a:hover {
+  color: #FF6347;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login & Signup</title>
+    <link rel="stylesheet" href="../Css/user_login.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="form-container">
+            <h2 id="authTitle">Login</h2>
+
+            <div id="loginForm" class="form-section">
+                <input type="email" id="userEmail" placeholder="Email" required>
+                <input type="password" id="userPassword" placeholder="Password" required>
+                <button id="loginBtn">Login</button>
+                <p>Don't have an account? <a href="#" id="switchToSignup">Create one</a></p>
+            </div>
+
+            <div id="signupForm" class="form-section" style="display:none;">
+                <input type="email" id="signupEmail" placeholder="Email" required>
+                <input type="password" id="signupPassword" placeholder="Password" required>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                <button id="signupBtn">Sign Up</button>
+                <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Javascript/user_login.js"></script>
+</body>
+</html>

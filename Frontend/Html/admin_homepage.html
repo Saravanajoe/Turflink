@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Turflik</title>
+    <link rel="stylesheet" href="../Css/admin_homepage.css">
+</head>
+<body>
+    
+    <div class="sidebar">
+        <div class="logo">
+            <h2>Turflik</h2>
+        </div>
+        <ul>
+            <li><a href="#" id="addNewTurf">Add New Turf</a></li>
+            <li><a href="#" id="manageTurfs">Manage Turfs</a></li>
+            <li><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="content-area">
+        <div id="turfFormSection" class="form-section" style="display:none;">
+            <h2>Add New Turf</h2>
+            <form id="addTurfForm" class="turf-form">
+                <label for="sportName">Sport Name:</label>
+                <input type="text" id="sportName" name="sportName" required>
+
+                <label for="turfName">Turf Name:</label>
+                <input type="text" id="turfName" name="turfName" required>
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+
+                <label for="image">Image:</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+
+                <label for="pricing">Pricing (per hour):</label>
+                <input type="number" id="pricing" name="pricing" required>
+
+                <button type="submit">Add Turf</button>
+            </form>
+        </div>
+
+        <div id="turfListSection" style="display:none;">
+            <h2>Manage Turfs</h2>
+            <div class="turf-list" id="turfsContainer">
+                <!-- Turf cards will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../Javascript/admin_homepage.js"></script>
+</body>
+</html>

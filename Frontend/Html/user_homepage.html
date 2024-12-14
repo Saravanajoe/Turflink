@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Homepage</title>
+    <link rel="stylesheet" href="../Css/user_homepage.css">
+</head>
+<body>
+    <!-- Placeholder for the header -->
+    <div id="header-placeholder"></div>
+    
+    <!-- Dynamically load the header -->
+    <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+
+          // Attach the logout functionality after the header is loaded
+          const logoutBtn = document.getElementById("logoutBtn");
+          if (logoutBtn) {
+              logoutBtn.addEventListener("click", () => {
+                  alert("Logged out successfully!");
+                  window.location.href = "../Html/index_page.html"; // Adjust path if necessary
+              });
+          } else {
+              console.error("Logout button not found!");
+          }
+        })
+        .catch((error) => console.error("Error loading the header:", error));
+    </script>
+
+    <!-- Image Carousel -->
+    <div class="image-carousel">
+        <img src="../Images/Homepage/home_page-1.jpg" alt="Image 1" class="carousel-image">
+        <img src="../Images/Homepage/home_page-2.jpg" alt="Image 2" class="carousel-image">
+        <img src="../Images/Homepage/home_page-3.jpg" alt="Image 3" class="carousel-image">
+    </div>
+    <br>
+    <h1>&nbsp;&nbsp;&nbsp;Recommended Turfs and Courts</h1>
+
+    <!-- Turf Cards Section -->
+    <section class="turf-cards">
+        <!-- Cards will be dynamically generated -->
+    </section>
+
+    <!-- Placeholder for the footer -->
+    <div id="footer-container"></div>
+    
+    <!-- Dynamically load the footer -->
+    <script>
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-container").innerHTML = data;
+        })
+        .catch((error) => console.error("Error loading the footer:", error));
+    </script>
+
+    <!-- User homepage script -->
+    <script src="../Javascript/user_homepage.js"></script>
+</body>
+</html>

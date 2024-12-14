@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../Css/list_your_arena.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+  <div id="header-placeholder"></div>
+    
+    <!-- Dynamically load the header -->
+    <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+
+          // Attach the logout functionality after the header is loaded
+          const logoutBtn = document.getElementById("logoutBtn");
+          if (logoutBtn) {
+              logoutBtn.addEventListener("click", () => {
+                  alert("Logged out successfully!");
+                  window.location.href = "../Html/index_page.html"; // Adjust path if necessary
+              });
+          } else {
+              console.error("Logout button not found!");
+          }
+        })
+        .catch((error) => console.error("Error loading the header:", error));
+    </script>
+  <h1 class = "title">What can you list?</h1>
+  <div class = "list-images-1">
+    <a href = "listing_form.html"><img class = "image1" src = "../Images/list_your_arena/lis-1.jpg" alt="" height="250px" width="300px"></a>
+    <a href = "listing_form.html"><img class = "image2" src = "../Images/list_your_arena/lis-2.png" alt="" height="250px" width="300px"></a>
+    <a href = "listing_form.html"><img class = "image3" src = "../Images/list_your_arena/lis-3.png" alt="" height="250px" width="300px"></a>
+  </div>
+  <div class = "list-name-1">
+    <h3 class = "a1">Cricket Turf</h3>
+    <h3 class = "a2">Football Turf</h3>
+    <h3 class = "a3">Badminton Court</h3>
+  </div>
+
+  <h1 class = "service">What are the services we offer?</h1>
+  <div class = "service-images-1">
+    <img class = "image1" src = "../Images/list_your_arena/lis-4.png" alt="" height="350px" width="400px">
+    <img class = "image2" src = "../Images/list_your_arena/lis-5.png" alt="" height="350px" width="400px">
+    <img class = "image3" src = "../Images/list_your_arena/lis-6.png" alt="" height="350px" width="400px">
+  </div>
+  <div class = "service-images-2">
+    <img class = "image4" src = "../Images/list_your_arena/lis-7.png" alt="" height="350px" width="350px">
+    <img class = "image5" src = "../Images/list_your_arena/lis-8.png" alt="" height="350px" width="345px">
+    <img class = "image6" src = "../Images/list_your_arena/lis-9.png" alt="" height="350px" width="340px">
+  </div>
+  <div id="footer-placeholder"></div>
+  <script>
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-placeholder').innerHTML = data;
+        });
+  </script>
+</body>
+</html>

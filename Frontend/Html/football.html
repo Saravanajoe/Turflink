@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Turfs</title>
+    <link rel="stylesheet" href="../Css/sports.css">
+</head>
+<body>
+
+    <!-- Dynamic Header -->
+    <div id="header-container"></div>
+
+    <!-- Turf Cards Section -->
+    <h1 class="head">Football Turfs</h1>
+    <section class="sport-turf-cards"></section>
+
+    <!-- Dynamic Footer -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript -->
+    <script>
+        // Function to load the header
+        function loadHeader() {
+            fetch('../Html/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("header-container").innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading header:', error);
+                });
+        }
+
+        // Function to load the footer
+        function loadFooter() {
+            fetch('../Html/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer-container").innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading footer:', error);
+                });
+        }
+
+        // Function to load turfs for a specific sport
+        function loadTurfs(sportType) {
+            const turfsBySport = JSON.parse(localStorage.getItem("turfs")) || {};
+            const sportTurfs  = turfsBySport.filter(turf => turf.sportName === sportType);
+            const turfsContainer = document.querySelector(".sport-turf-cards");
+
+            turfsContainer.innerHTML = ""; // Clear any existing turfs
+
+            if (sportTurfs.length > 0) {
+                sportTurfs.forEach((turf) => {
+                    const turfCard = document.createElement("div");
+                    turfCard.classList.add("turf-card");
+
+                    turfCard.innerHTML = `
+                        <img src="${turf.image}" alt="${turf.turfName}" class="turf-image">
+                        <h3>${turf.turfName}</h3>
+                        <p><strong>Location:</strong> ${turf.location}</p>
+                        <p><strong>Pricing:</strong> ₹${turf.pricing}/hr</p>
+                    `;
+                    
+                    // Add click event to redirect to booking page with turf name
+                    turfCard.addEventListener('click', function () {
+                        window.location.href = `booking.html?turfName=${encodeURIComponent(turf.turfName)}`;
+                    });
+
+                    turfsContainer.appendChild(turfCard);
+                });
+            } else {
+                turfsContainer.innerHTML = "<p>No turfs available for this sport.</p>";
+            }
+        }
+
+        // Load the header, footer, and turfs when the page is ready
+        window.onload = function() {
+            loadHeader();
+            loadFooter();
+            loadTurfs("football");
+        };
+    </script>
+
+</body>
+</html>

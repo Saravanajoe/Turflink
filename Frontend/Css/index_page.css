@@ -1,0 +1,57 @@
+/* General Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Container Styling */
+.role-container {
+  text-align: center;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styling */
+.role-container h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Button Styling */
+.role-container button {
+  width: 200px;
+  padding: 15px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Admin Button Styling */
+.admin-btn {
+  background: #5cb85c;
+  color: #fff;
+}
+
+.admin-btn:hover {
+  background: #4cae4c;
+}
+
+/* User Button Styling */
+.user-btn {
+  background: #5bc0de;
+  color: #fff;
+}
+
+.user-btn:hover {
+  background: #46b8da;
+}
